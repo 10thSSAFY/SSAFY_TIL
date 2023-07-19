@@ -37,12 +37,15 @@ print(sum_result)  # 8
 (별도의 import 없이 바로 사용 가능)
 #### 내장 함수 예시
 - 절대값을 만드는 함수 abs
-```python
-result = abs(-1)
-print(result)  # 1
-```
+    ```python
+    result = abs(-1)
+    print(result)  # 1
+    ```
 ### 함수 호출 `function call`
 함수를 실행하기 위해 함수의 이름을 사용하여 해당 함수의 코드 블록을 실행하는 것
+```python
+function_name(arguments)
+```
 ### 함수의 구조
 #### 함수 구조
 ```python
@@ -57,6 +60,22 @@ def make_sum(pram1, pram2):
     return pram1 + pram2
 ```
 #### 함수의 정의와 호출
+- 함수 정의(정의)
+    - 함수 정의는 def 키워드로 시작
+    - def 키워드 이후 함수 이름 작성
+    - 괄호안에 매개변수를 정의할 수 있음
+    - 매개변수(parameter)는 함수에 전달되는 값을 나타냄
+- 함수 body
+    - 콜론(`:`) 다음에 들여쓰기 된 코드 블록
+    - 함수가 실행 될 때 수행되는 코드를 정의
+    - Docstring은 함수 body 앞에 선택적으로 작성 가능한 함수 설명서
+- 함수 반환 값
+    - 함수는 필요한 경우 결과를 반환할 수 있음
+    - `return` 키워드 이후에 반환할 값을 명시
+    - `return`문은 함수의 실행을 종료하고, 결과를 호출 부분으로 변환
+- 함수 호출
+    - 함수를 호출하기 위해서는 함수의 이름과 필요한 인자(argument)를 전달해야 함
+    - 호출 부분에서 전달된 인자는 함수 정의 시 작성한 매개변수에 대입됨
 ```python
 # 함수 정의
 def greed(name):
@@ -71,11 +90,6 @@ def greed(name):
 result = greet('Alice')
 print(result)
 ```
-- 함수 정의(정의)
-    - 함수 정의는 def 키워드로 시작
-    - def 키워드 이후 함수 이름 작성
-    - 괄호안에 매개변수를 정의할 수 있음
-    - 매개변수(parameter)는 함수에 전달되는 값을 나타냄
 ## 매개변수와 인자
 ### 매개변수 `parameter`
 함수를 정의할 때, 함수가 받을 값을 나타내는 변수
@@ -116,7 +130,7 @@ greet('Charlie', 40)  # 안녕하세요, Charlie님! 40살이시군요.
 - 함수 호출 시 인자의 이름과 함께 값을 전달하는 인자
 - 매개변수와 인자를 일치시키지 않고, 특정 매개변수에 값을 할당할 수 있음
 - 인자의 순서는 중요하지 않으며, 인자의 이름을 명시하여 전달
-- 단 호출 시 키워드 인자는 위치 인자 뒤에 위치해야 함
+- <span style='color:red;'>단, 호출 시 키워드 인자는 위치 인자 뒤에 위치해야 함</span>
 ```python
 def greeting(name, age):
     print(f'안녕하세요, {name}님! {age}살이시군요.')
@@ -127,6 +141,18 @@ greet(age=35, 'Dave') # positional argument follows keyword argument
 #### Arbitrary Argument Lists (임의의 인자 목록)
 - 정해지지 않은 개수의 인자를 처리하는 인자
 - 함수 정의 시 매개변수 앞에 '`*`'를 붙여 사용하며, 여러 개의 인자를 tuple로 처리
+```python
+def calculate_sum(*args):
+    print(args)
+    total = sum(args)
+    print(f'합계: {total}')
+
+"""
+(1, 2, 3)
+합계: 6
+"""
+calculate_sum(1, 2, 3)
+```
 #### Arbitrary Keyword Argument Lists (임의의 키워드 인자 목록)
 - 정해지지 않은 개수의 키워드 인자를 처리하는 인자
 - 함수 정의 시 매개변수 앞에 '`**`'를 붙여 사용하며,<br>
@@ -140,14 +166,14 @@ print_info(name='Eve', age=30)  # {'name': 'Eve', 'age': 30}
 #### 함수 인자 권장 작성순서
 - 위치 -> 기본 -> 가변 ~~-> 키워드~~ -> 가변 키워드
 - 호출 시 인자를 전달하는 과정에서 혼란을 줄일 수 있도록 함
-- 단, 모든 상황에 적용되는 절대적인 규칙은 아니며, 상황에 따라 유연하게 조정될 수 있음
+- <span style='color:red;'>단, 모든 상황에 적용되는 절대적인 규칙은 아니며, 상황에 따라 유연하게 조정될 수 있음</span>
 ```python
 def func(pos1, pos2, default_arg='default', *args, kwd, **kwargs):
     return True
 ```
 ## 함수와 Scope
 #### Python의 범위(Scope)
-- 함수는 코드 내부에 local scope를 생성하며, 그 외의 공간인 global scope로 구분
+- 함수는 코드 내부에 <span style='color:red;'>local scope</span>를 생성하며, 그 외의 공간인 <span style='color:red;'>global scope</span>로 구분
 - scope
     - global scope: 코드 어디에서든 참조할 수 있는 공간
     - logal scope: 함수가 만든 scope (함수 내부에서만 참조 가능)
@@ -156,7 +182,7 @@ def func(pos1, pos2, default_arg='default', *args, kwd, **kwargs):
     - local variable: local scope에 정의된 변수
 #### Scope 예시
 - num은 local scope에 존재하기 때문에 global에서 사용할 수 없음
-- 이는 변수의 수명주기와 연관이 있음
+- 이는 변수의 <span style='color:red;'>수명주기</span>와 연관이 있음
 ```python
 def func():
     num = 20
@@ -181,7 +207,7 @@ print('global', num)  # NameError: name 'num' is not defined
     2. Enclosed scope: 지역 범위 한 단계 위 범위
     3. Global scope: 최상단에 위치한 범위
     4. Built-in scope: 모든 것을 담고 있는 범위(정의하지 않고 사용할 수 있는 모든 것)
-- 함수 내에서는 바깥 Scope의 변수에 접근 가능하나 수정은 할 수 없음
+- <span style='color:red;'>함수 내에서는 바깥 Scope의 변수에 접근 가능하나 수정은 할 수 없음</span>
 #### LEGB Rule 예시
 - sum이라는 이름을 global scope에서 사용하게 되면서<br>
 기존에 built-in scope에 있던 내장함수 sum을 사용하지 못하게 됨
@@ -249,7 +275,7 @@ print(num)  # 1
     ```
 
 global 키워드는 가급적 사용하지 않는 것을 권장<br><br>
-함수로 값을 바꾸고자 한다면 항상 인자로 넘기고 함수의 반환 값을 사용하는 것을 권장
+함수로 값을 바꾸고자 한다면 항상 <span style='color:red;'>인자</span>로 넘기고 함수의 <span style='color:red;'>반환 값</span>을 사용하는 것을 권장
 ## 재귀 함수
 ### 재귀 함수
 함수 내부에서 자기 자신을 호출하는 함수
@@ -264,18 +290,18 @@ global 키워드는 가급적 사용하지 않는 것을 권장<br><br>
 - factorial 함수는 자기 자신을 재귀적으로 호출하여 입력된 숫자 n의 팩토리얼을 계산
 - 재귀 호출은 n이 0이 될 때까지 반복되며, 종료 조건을 설정하여 재귀 호출이 멈추도록 함
 - 재귀 호출의 결과를 이용하여 문제를 작은 단위의 문제로 분할하고, 분할된 문제들의 결과를 조합하여 최종 결과를 도출
-```python
-def factorial(n):
-    # 종료 조건: n이 0이면 1을 반환
-    if n == 0:
-        return 1
-    # 재귀 호출: n과 n-1의 팩토리얼을 곱한 결과를 반호나
-    return n * factorial(n - 1)
+    ```python
+    def factorial(n):
+        # 종료 조건: n이 0이면 1을 반환
+        if n == 0:
+            return 1
+        # 재귀 호출: n과 n-1의 팩토리얼을 곱한 결과를 반호나
+        return n * factorial(n - 1)
 
-# 팩토리얼 계산 예시
-result = factorial(5)
-print(result)  # 120
-```
+    # 팩토리얼 계산 예시
+    result = factorial(5)
+    print(result)  # 120
+    ```
 재귀함수는<br>1. 종료 조건을 명확히<br>2. 반복되는 호출이 종료 조건을 향하도록
 ## 유용한 함수
 ### 유용한 내장 함수
@@ -307,7 +333,7 @@ print(list(pair))  # [('jane', 'peter'), ('ashley', 'jay')]
 ### lambda 함수
 이름 없이 정의되고 사용되는 익명 함수
 #### lambda 함수 구조
-lambda 매개변수: 표현식
+> lambda 매개변수: 표현식
 - lambda 키워드
     - 람다 함수를 선언하기 위해 사용되는 키워드 입니다.
 - 매개변수
@@ -318,23 +344,225 @@ lambda 매개변수: 표현식
 #### lambda 함수 예시
 - 간단한 연산이나 함수를 한 줄로 표현할 때 사용
 - 함수를 매개변수로 전달하는 경우에도 유용하게 활용
-```python
-def addition(x, y):
-    return x + y
+    ```python
+    def addition(x, y):
+        return x + y
 
-result = addition(3, 5)
-print(result)  # 8
-```
-```python
-addition = lambda x, y: x + y
+    result = addition(3, 5)
+    print(result)  # 8
+    ```
+    ```python
+    addition = lambda x, y: x + y
 
-result = addition(3, 5)
-print(result) # 8
-```
+    result = addition(3, 5)
+    print(result) # 8
+    ```
 ## Packing & Unpacking
+### Packing `패킹`
+여러 개의 값을 하나의 변수에 묶어서 담는 것
+#### 패킹 예시
+- 변수에 담긴 값들은 튜플(tuple) 형태로 묶임
+    ```python
+    packed_values = 1, 2, 3, 4, 5
+    print(packed_values)  # (1, 2, 3, 4, 5)
+    ```
+#### '`*`'을 활용한 패킹
+- `*b`는 남은 요소들을 리스트로 패킹하여 할당
+    ```python
+    numbers = [1, 2, 3, 4, 5]
+    a, *b, c = numbers
 
+    print(a) # 1
+    print(b) # [2, 3, 4]
+    print(c) # 5
+    ```
+- `print` 함수에 임의의 가변 인자를 작성할 수 있었던 이유
+    ```python
+    print('hello') # hello
+    print('you', 'need', 'python') # you need python
+    ```
+    ![image](https://github.com/ragu6963/TIL/assets/32388270/05db04bd-d01c-4f4c-a193-854e59385d67)
+### Unpacking `언패킹`
+패킹된 변수의 값을 개별적인 변수로 분리하여 할당하는 것
+#### 언패킹 예시
+- 튜플이나 리스트 등의 객체의 요소들을 개별 변수에 할당
+    ```python
+    packed_values = 1, 2, 3, 4, 5
+    a, b, c, d, e = packed_values
+
+    print(a, b, c, d, e)  # 1 2 3 4 5
+    ```
+#### '`*`'을 활용한 언패킹
+- `*` 는 리스트의 요소를 언패킹
+    ```python
+    names = ['alice', 'jane', 'peter']
+    print(*names)  # alice jane peter
+    ```
+#### '`**`'을 활용한 언패킹
+- `**` 는 딕셔너리 키-값 쌍을 함수의 키워드 인자로 언패킹
+    ```python
+    def my_function(x, y, z):
+        print(x, y, z)
+
+    my_dict = {'x': 1, 'y': 2, 'z': 3}
+    my_function(**my_dict)  # 1 2 3
+    ```
+#### `*`, `**` 패킹 / 언패킹 연산자 정리
+- '`*`'
+    - 패킹 연산자로 사용될 때, 여러 개의 인자를 하나의 튜플로 묶는 역할
+    - 언패킹 연산자로 사용될 때, 시퀀스나 반복 가능한 객체를 각각의 요소로 언패킹하여 함수의 인자로 전달
+- '`**`'
+    - 언패킹 연산자로 사용될 때, 딕셔너리의 키-값 쌍을 키워드 인자로 언패킹하여 함수의 인자로 전달하는 역할
 ## 모듈
+개요
+- 과학자, 수학자가 모든 이론을 새로 만들거나 증명하지 않는 것처럼 개발자 또한 프로그램 전체를 모두 혼자 힘으로 작성하는 것은 드문 일
+- 이미 다른 프로그래머가 이미 작성해 놓은 수천, 수백만 줄의 코드를 사용하는 것은 생산성에서 매우 중요한 일
+### 모듈 `Module`
+한 파일로 묶인 변수와 함수의 모음<br>
+특정한 기능을 하는 코드가 작성된 파이썬 파일(.py)
+#### 모듈 예시
+- 파이썬의 math 모듈
+- 파이썬이 미리 작성해 둔 수학 관련 변수와 함수가 작성된 모듈
+    ```python
+    import math
 
-## 모듈 활용
+    print(math.pi)  # 3.141592653589793
 
-## 파이썬 표준 라이브러리
+    print(math.sqrt(4))  # 2.0
+    ```
+> 참고 문서 : https://docs.python.org/3/library/math.html
+### 모듈 활용
+#### 모듈 import
+##### 모듈 가져오기
+- 모듈 내 변수와 함수에 접근하려면 `import `문이 필요
+    ```python
+    import math
+    ```
+- 내장 함수 `help`를 사용해 모듈에 무엇이 들어있는지 확인 가능
+    ```python
+    help(math)
+
+    """
+    NAME
+        math
+
+    DESCRIPTION
+        This module provides access to the mathematical functions
+        defined by the C standard.
+
+    FUNCTIONS
+        acos(x, /)
+            Return the arc cosine (measured in radians) of x.
+
+            The result is between 0 and pi
+            ...
+    """
+    ```
+##### 모듈 사용하기
+- ‘<span style='color:red;'>. (dot)</span>’은<br>“점의 왼쪽 객체에서 점의 오른쪽 이름을 찾아라“ 라는 의미의 연산자
+    ```python
+    # 모듈명.변수명
+    print(math.pi)
+
+    # 모듈명.함수명
+    print(math.sqrt(4))
+    ```
+##### 모듈을 import하는 다른 방법
+- <span style='color:red;'>from</span> 절을 활용해 특정 모듈을 미리 참조하고 어떤 요소를 import 할지 명시
+    ```python
+    from math import pi, sqrt
+
+
+    print(pi)
+
+    print(sqrt(4))
+    ```
+##### 모듈 주의사항
+- <span style='color:red;'>만약 서로 다른 모듈이 같은 이름의 함수를 제공할 경우 문제 발생
+- 마지막에 import된 이름으로 대체됨
+    ```python
+    from math import pi, sqrt
+    from my_math import sqrt
+    ```
+    ```python
+    # 그래서 모듈 내 모든 요소를 한번에 import 하는 * 표기는 권장하지 않음
+
+    from math import *
+    ```
+
+#### 사용자 정의 모듈
+##### 직접 정의한 모듈 사용하기
+1. 모듈 my_math.py 작성
+2. 두 수의 합을 구하는 add 함수 작성
+3. my_math 모듈 import 후 add 함수 호출
+![image](https://github.com/ragu6963/TIL/assets/32388270/16905377-6a9c-4ba5-9d3e-0ce5a77da4f1)
+
+### 파이썬 표준 라이브러리
+#### 파이썬 표준 라이브러리 `Python Standard Library`
+파이썬 언어와 함께 제공되는 다양한 모듈과 패키지의 모음
+> 참고 문서 : https://docs.python.org/ko/3/library/index.html
+#### 패키지 `Package`
+관련된 모듈들을 하나의 디렉토리에 모아 놓은 것
+#### 패키지 사용하기 (1/2)
+- 아래와 같은 디렉토리 구조로 작성
+- 패키지 3개 : my_package, math, statistics
+- 모듈 2개 : my_math, tools
+- 디렉토리 전체 구조
+    ```markdown
+    📦...
+     ┣ 📜sample.py
+     ┣ 📂my_package
+     ┃ ┣ 📂math
+     ┃ ┃ ┗ 📜my_math.py
+     ┃ ┣ 📂statistics
+     ┃ ┃ ┗ 📜tools.py
+    ```
+
+![image](https://github.com/ragu6963/TIL/assets/32388270/01f0ca51-45b2-4468-8a38-b81c6db14b24)
+#### 패키지 사용하기 (2/2)
+- 각 패키지의 모듈을 import 하여 사용하기
+    ```python
+    # sample.py
+
+    from my_package.math import my_math
+    from my_package.statistics import tools
+
+
+    print(my_math.add(1, 2))  # 3
+    print(tools.mod(1, 2))  # 1
+    ```
+#### PSL 내부 패키지
+설치 없이 바로 import하여 사용
+
+#### 외부 패키지
+pip를 사용하여 설치 후 import 필요
+
+#### pip `파이썬 패키지 관리자`
+외부 패키지들을 설치하도록 도와주는 파이썬의 패키지 관리 시스템
+
+- PyPI(Python Package Index)에 저장된 외부 패키지들을 설치
+> https://pypi.org/
+
+#### 패키지 설치
+- 최신 버전 / 특정 버전 / 최소 버전을 명시하여 설치할 수 있음
+    ```bash
+    $ pip install SomePackage
+    $ pip install SomePackage==1.0.5
+    $ pip install SomePackage>=1.0.4
+    ```
+#### requests 외부 패키지 설치 및 사용 예시
+```bash
+$ pip install requests
+```
+```python
+import requests
+
+
+url = 'https://random-data-api.com/api/v2/users'
+response = requests.get(url).json()
+
+print(response)
+```
+#### 패키지 사용 목적
+모듈들의 이름공간은 구분하여 충돌을 방지 <br>
+모듈들을 효율적으로 관리하고 재사용할 수 있도록 돕는 역할
