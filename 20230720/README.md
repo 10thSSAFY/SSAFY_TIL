@@ -378,3 +378,99 @@ for number in range(1, 5):
 4
 """
 ```
+### List Comprehension
+List Comprehension<br>
+간결하고 효율적인 리스트 생성 방법
+#### List Comprehension 구조
+```python
+[expression for 변수 in iterable]
+
+list(expression for 변수 in iterable)
+```
+#### List Comprehension 활용
+- 사용 전
+    ```python
+    numbers = [1, 2, 3, 4, 5]
+    squared_numbers = []
+
+    for num in numbers:
+        squared_numbers.append(num**2)
+
+    print(squared_numbers)  # [1, 4, 9, 16, 25]
+    ```
+- 사용 후
+    ```python
+    number = [1, 2, 3, 4, 5]
+    squared_numbers = [num**2 for num in numbers]
+
+    print(squared_numbers)  # [1, 4, 9, 16, 25] 
+    ```
+#### [참고] List Comprehension과 if 조건문
+```python
+[expression for 변수 in iterable if 조건식]
+
+list(expression for 변수 in iterable if 조건식)
+```
+#### 가독성 비교
+- Comprehension 사용 (가독성이 떨어진다)
+    ```python
+    result = [i for i in range(10) if i % 2 == 1]
+
+    # [1, 3, 5, 7, 9]
+    ```
+- Comprehension 미사용
+    ```python
+    result = []
+    for i in range(10):
+        if i % 2 == 1:
+            result.append(i)
+
+    # [1, 3, 5, 7, 9]
+    ```
+#### Comprehension을 남용하지 말자.
+> "Simple is better than complex"<br>
+> "Keep it simple, stupid"
+
+## 참고
+### pass
+아무런 동작도 수행하지 않고 넘어가는 역할<br>
+> 문법적으로 문장이 필요하지만 프로그램 실행에는 <br>영향을 주지 않아야 할 때 사용
+#### pass 예시
+1. 코드 작성 중 미완성 부분
+    - 구현해야 할 부분이 나중에 추가될 수 있고, <br>코드를 컴파일하는 동안 오류가 발생하지 않음
+    ```python
+    def my_function():
+        pass  
+    ```
+2. 조건문에서 아무런 동작을 수행하지 않아야 할 때
+    ```python
+    if condition:
+        pass # 아무런 동작도 수행하지 않음
+    else:
+        # 다른 동작 수행
+    ```
+3. 무한 루프에서 조건이 충족되지 않을 때 pass를 사용하여 <br>루프를 계속 진행하는 방법
+    ```python
+    while True:
+        if condition:
+            break
+        elif condition:
+            pass  # 루프 계속 진행
+        else:
+            print('..')
+    ```
+### enumerate(iterable, start=0) 
+iterable 객체의 각 요소에 대해 인덱스와 <br>함께 반환하는 내장함수
+#### enumerate 예시
+```python
+fruits = ['apple', 'banana', 'cherry']
+
+for index, fruit in enumerate(fruits):
+    print(f'인덱스 {index}: {fruit}')
+
+"""
+인덱스 0: apple
+인덱스 1: banana
+인덱스 2: cherry
+"""
+```
