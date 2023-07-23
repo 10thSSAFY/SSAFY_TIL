@@ -357,6 +357,18 @@ print(list(pair))  # [('jane', 'peter'), ('ashley', 'jay')]
     result = addition(3, 5)
     print(result) # 8
     ```
+    ```python
+    # map + lambda
+    numbers = [1, 2, 3, 4, 5]
+
+    result1 = list(map(lambda x: x * 2, numbers))
+    print(result1) # [2, 4, 6, 8, 10]
+
+    def double_number(x):
+        return x * 2
+    result2 = list(map(double_number, numbers))
+    print(result2) # [2, 4, 6, 8, 10]
+    ```
 ## Packing & Unpacking
 ### Packing `패킹`
 여러 개의 값을 하나의 변수에 묶어서 담는 것
