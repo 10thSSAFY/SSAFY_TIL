@@ -13,6 +13,7 @@
 #### 자료구조
 - 컴퓨터 공학에서는 '자료 구조' 라고 함
 - 각 데이터의 효율적인 저장, 관리를 위한 구조를 나눠 놓은 것
+    ![image](https://github.com/ragu6963/TIL/assets/32388270/ec3c4025-1305-4ba1-8f7a-fc355c1fa4e3)
 
 #### 데이터 구조 활용
 - 문자열, 리스트, 딕셔너리 등 각 데이터 구조의 <span style='color:red;'>메서드</span>를 호출하여 다양한 기능을 활용하기
@@ -179,13 +180,12 @@ print(new_text3)  # HELLO, WORLD!
 print(new_text4)  # HEllO, WOrLD!
 
 ```
-
+메서드는 이어서 사용 가능
 ```python
 text = 'heLLo, woRld!'
 new_text = text.swapcase().replace('l', 'z')
 print(new_text)  # HEzzO, WOrLD!
 ```
-메서드는 이어서 사용 가능
 
 ### 리스트
 
