@@ -138,28 +138,28 @@ print(numbers)  # [1, 2, 3, 4]
 | s.swapcase() | 대↔소문자 서로 변경 |
 
 #### 문자열 조작 메서드
-- .replace(old, new[,count])
+- .replace(*old, new[,count]*)
     - 바꿀 대상 글자를 새로운 글자로 바꿔서 반환
         ```python
         text = 'Hello, world!'
         new_text = text.replace('world', 'Python')
         print(new_text)  # Hello, Python!
         ```
-- .strip([chars])
+- .strip(*[chars]*)
     - 문자열의 시작과 끝에 있는 공백 혹은 지정한 문자를 제거
         ```python
         text = '    Hello, world!    '
         new_text = text.strip()
         print(new_text)  # Hello, world!
         ```
-- .split(sep=None, maxsplit=-1)
+- .split(*sep=None, maxsplit=-1*)
     - 지정한 문자를 구분자로 문자열을 분리하여 문자열의 리스트로 반환
         ```python
         text = 'Hello, world!'
         words = text.split(',')
         print(words)  # ['Hello', ' world!']
         ```
-- 'separator'.join([iterable])
+- *'separator'*.join(*[iterable]*)
     - iterable 요소들을 원래의 문자열을 구분자로 이용하여 하나의 문자열로 연결
         ```python
         words = ['Hello'm 'world!']
@@ -207,14 +207,14 @@ print(new_text)  # HEzzO, WOrLD!
         my_list.append(4)
         print(my_list)  # [1, 2, 3, 4]
         ```
-- .extend(iterable)
+- .extend(*iterable*)
     - 리스트에 다른 반복 가능한 객체의 모든 항목을 추가
         ```python
         my_list = [1, 2, 3]
         my_list.extend([4, 5, 6])
         print(my_list)  # [1, 2, 3, 4, 5, 6]
         ```
-- .insert(i, x)
+- .insert(*i, x*)
     - 리스트의 지정한 인덱스 i의 위치에 항목 x를 삽입
         ```python
         my_list = [1, 2, 3]
@@ -288,6 +288,7 @@ print(new_text)  # HEzzO, WOrLD!
         my_list.reverse()
         print(my_list)  # [9, 1, 8, 2, 3, 1]
         ```
+
 ## 참고
 ### 문자열에 포함된 문자들의 유형을 판별하는 메서드
 - isdecimal()
@@ -303,3 +304,35 @@ print(new_text)  # HEzzO, WOrLD!
     | False | True | True | ... |
     | False | False | True | ... |
     | False | False | False | ... |
+
+## 예고편
+```python
+numbers = [1, 2, 3]
+
+# 1. 할당
+list1 = numbers
+
+# 2. 슬라이싱
+list2 = numbers[:]
+
+list1[0] = [100]
+print(list1)  # [[100], 2, 3]
+print(list2)  # [1, 2, 3]
+```
+
+## 수업
+```python
+numbers = [1, 2, 3]
+numbers.append([3, 4, 5])
+print(numbers)  # [1, 2, 3, [3, 4, 5]]
+
+t = numbers.append(5)
+print(t)  # None
+print(numbers)  # [1, 2, 3, [3, 4, 5], 5]
+
+chars = 'ssafy'
+newC = chars.capitalize()
+print(newC)  # Ssafy
+
+print(''.join(['1', '2']))  # 12
+```
