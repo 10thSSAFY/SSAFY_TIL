@@ -1,4 +1,4 @@
-# Data Structure
+# Data Structure [Home](./..)
 
 ## INDEX
 - Data Structure

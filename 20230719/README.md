@@ -1,4 +1,4 @@
-# Functions
+# Functions [Home](./..)
 ## INDEX
 - 함수
 - 매개변수와 인자

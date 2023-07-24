@@ -1,4 +1,4 @@
-# Data Types
+# Data Types [Home](./..)
 ## INDEX
 - Data Types
 - Numeric Types
