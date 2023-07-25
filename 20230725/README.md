@@ -64,7 +64,7 @@
     ```
 
 ##### .pop()
-- 세트에서 <span style='color:red;'>임의의</span> 요소를 제거하고 <span style='color:red;'>반환</span>
+- 세트에서 <span style='color:red;'>임의의</span> 요소를 제거하고 <span style='color:red;'>반환</span> (set는 순서가 없기 때문)
 
     ```py
     my_set = {1, 2, 3}
