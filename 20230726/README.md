@@ -336,7 +336,6 @@ p2 인스턴스의 이름 공간에 name이 Kim으로 저장됨
 - 예시 1
 
     ```py
-    
     class Circle:
     pi = 3.14
 
@@ -353,7 +352,6 @@ p2 인스턴스의 이름 공간에 name이 Kim으로 저장됨
 - 예시 2
 
     ```py
-    
     class Circle:
     pi = 3.14
 
@@ -571,8 +569,8 @@ person1 = Person('지민')  # 인스턴스가 생성되었습니다. 지민
     ```py
     class MyClass:
         
-        @classmethod
-        def class_method(cls, arg1, ...):
+        @classmethod  # @ <- 데코레이터
+        def class_method(cls, arg1, ...):  # cls -> MyClass
             pass
 
     ```
@@ -588,7 +586,7 @@ class Person:
 
     @classmethod
     def number_of_population(cls):
-        print(f'인구수는 {cls.count}입니다.')
+        print(f'인구수는 {cls.count}입니다.')  # Person.count를 쓸 수도 있지만 상속때문에 필요할 수 있음.
 
 
 person1 = Person('iu')
