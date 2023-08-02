@@ -8,6 +8,7 @@ for tc in range(1, T+1):
     arr = [list(map(int, input().split())) for _ in range(N)]
 
     cnt = 0
+
     for r in range(N):
         arr_sum = 0
         for c in range(N):
@@ -17,11 +18,9 @@ for tc in range(1, T+1):
                 if arr_sum == M:
                     cnt += 1
                 arr_sum = 0
-        else:
-            if arr_sum == M:
-                cnt += 1
-            arr_sum = 0
-    
+        if arr_sum == M:
+            cnt += 1
+
     for r in range(N):
         arr_sum = 0
         for c in range(N):
@@ -31,9 +30,7 @@ for tc in range(1, T+1):
                 if arr_sum == M:
                     cnt += 1
                 arr_sum = 0
-        else:
-            if arr_sum == M:
-                cnt += 1
-            arr_sum = 0
+        if arr_sum == M:
+            cnt += 1
 
     print(f'#{tc} {cnt}')
