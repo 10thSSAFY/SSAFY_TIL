@@ -1,5 +1,6 @@
+# Flatten
 import sys
-sys.stdin = open('Flatten.txt', 'r')
+sys.stdin = open('input_Flatten.txt', 'r')
 
 T = 10
 for tc in range(1, T+1):

@@ -1,5 +1,6 @@
+# 전기버스
 import sys
-sys.stdin = open('4831.txt', 'r')
+sys.stdin = open('input_4831.txt', 'r')
 
 def check():
     # STOPS의 간격이 K보다 크면 결과가 0

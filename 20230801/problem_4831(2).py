@@ -1,5 +1,6 @@
+# 전기버스
 import sys
-sys.stdin = open('4831.txt', 'r')
+sys.stdin = open('input_4831.txt', 'r')
 
 T = int(input())
 for test_case in range(1, T + 1):

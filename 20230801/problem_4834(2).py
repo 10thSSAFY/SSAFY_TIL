@@ -1,5 +1,6 @@
+# 숫자카드
 import sys
-sys.stdin = open('4834.txt', 'r')
+sys.stdin = open('input_4834.txt', 'r')
 
 T = int(input())
 
