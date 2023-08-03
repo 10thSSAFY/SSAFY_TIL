@@ -1,3 +1,4 @@
+# 이진탐색
 import sys
 sys.stdin = open('input_4839.txt', 'r')
 
