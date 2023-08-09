@@ -1,4 +1,4 @@
-# 비밀번호
+# 괄호 짝짓기
 import sys
 sys.stdin = open('res/input_parenthesis_pairing.txt', 'r')
 
@@ -16,6 +16,7 @@ for tc in range(1, 11):
             stack.pop()
         else:
             result = 0
+            break
     else:
         if stack:
             result = 0
