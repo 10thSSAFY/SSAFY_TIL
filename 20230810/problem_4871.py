@@ -1,6 +1,6 @@
 # 그래프 경로
 import sys
-sys.stdin = open('res/input_4817.txt', 'r')
+sys.stdin = open('res/input_4871.txt', 'r')
 
 def path(Start, Goal, Graph, Visited):
     if Start == Goal:
@@ -9,8 +9,8 @@ def path(Start, Goal, Graph, Visited):
         if Visited[tmp] == 'F':
             Visited[tmp] = 'T'
             if path(tmp, Goal, Graph, Visited):
-                return 1
-    return 0
+                return 1  # if문에서 True로 사용
+    return 0  # if 문에서 False로 사용
 
 
 T = int(input())
