@@ -13,4 +13,4 @@ for tc in range(1, T+1):
         while stack and stack[-1] < high:
             result += high - stack.pop()
 
-    print(f'{tc} {result}')
+    print(f'#{tc} {result}')
