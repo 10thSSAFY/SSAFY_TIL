@@ -12,9 +12,10 @@ def dfs(r, s):
             return 1
         for dr, dc in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
             newR, newC = vr + dr, vc + dc
-            if 0 <= newR < N and 0 <= newC < N and lst[newR][newC] != '1' and not visited[newR][newC]:
-                ST.append((newR, newC))
-                visited[newR][newC] = True
+            if 0 <= newR < N and 0 <= newC < N and lst[newR][newC] != '1':
+                if not visited[newR][newC]:
+                    ST.append((newR, newC))
+                    visited[newR][newC] = True
     return 0
 
 
