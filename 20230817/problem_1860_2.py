@@ -2,24 +2,26 @@
 import sys
 sys.stdin = open('res/input_1860.txt', 'r')
 
-def how(M, K, peoples):
-    sec = 0
-    KWBS = 0
-    while peoples:
-        if sec != 0 and sec % M == 0:
-            KWBS += K
-        while peoples and sec == peoples[0]:
-            peoples.pop(0)
-            if KWBS > 0:
-                KWBS -= 1
-            else:
-                return 'Impossible'
-        sec += 1
-    return 'Possible'
-
 T = int(input())
 for tc in range(1, T+1):
-    N, M, K = map(int, input().split())
-    peoples = sorted(list(map(int, input().split())))
-    result = how(M, K, peoples)
+    N, M, K = map(int,input().split())
+    nums = sorted(list(map(int,input().split())))
+    result = 'Possible'
+    for s in nums:
+        if (s//M)*K - nums.index(s) - 1 < 0:
+            result ='Impossible'
+            break
     print(f'#{tc} {result}')
+'''
+T = int(input())
+for tc in range(1, T+1):
+    n,m,k = map(int,input().split())
+    nums = sorted(list(map(int,input().split())))
+    time = 1
+    a ='Possible'
+    for s in nums:
+        if (s//m)*k-nums.index(s)-1<0:
+            a ='Impossible'
+            break
+    print(f'#{tc}', a)
+'''
