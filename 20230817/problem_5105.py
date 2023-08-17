@@ -1,7 +1,7 @@
-# 미로의 거리  (5/10 실패)
+# 미로의 거리  (5/10 실패) 20230818 해결
 import sys
 sys.stdin = open('res/input_5105.txt', 'r')
-
+'''
 def BFS(r, c):
     ST = [(r, c)]
     visited[r][c] = True
@@ -34,3 +34,4 @@ for tc in range(1, T+1):
     visited = [[False] * N for _ in range(N)]
     result = BFS(R, C)
     print(f'#{tc} {result}')
+'''
