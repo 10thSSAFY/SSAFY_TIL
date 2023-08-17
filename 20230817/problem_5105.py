@@ -8,7 +8,7 @@ def BFS(r, c):
     cnt = -1
     while ST:
         cnt += 1
-        # print(ST, cnt)
+        print(ST, cnt)
         for _ in range(len(ST)):
             vr, vc = ST.pop(0)
             if arr[vr][vc] == '3':
@@ -21,14 +21,16 @@ def BFS(r, c):
                         visited[newR][newC] = True
     return 0
 
+
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     arr = [list(input()) for _ in range(N)]
-    for r in range(N):
-        for c in range(N):
-            if arr[r][c] == '2':
-                break
+    for i in range(N):
+        for j in range(N):
+            if arr[i][j] == '2':
+                R = i
+                C = j
     visited = [[False] * N for _ in range(N)]
-    result = BFS(r, c)
+    result = BFS(R, C)
     print(f'#{tc} {result}')
