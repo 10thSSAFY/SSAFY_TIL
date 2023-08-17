@@ -1,13 +1,14 @@
+# 미로의 거리
 import sys
 sys.stdin = open('res/input_5105.txt', 'r')
 
 def BFS(r, c):
     ST = [(r, c)]
+    visited = [[False] * N for _ in range(N)]
     visited[r][c] = True
-    cnt = -1
+    cnt = 0
     while ST:
-        cnt += 1
-        print(ST, cnt)
+        # print(ST, cnt)
         for _ in range(len(ST)):
             vr, vc = ST.pop(0)
             if arr[vr][vc] == '3':
@@ -18,8 +19,8 @@ def BFS(r, c):
                     if not visited[newR][newC]:
                         ST.append((newR, newC))
                         visited[newR][newC] = True
+        cnt += 1
     return 0
-
 
 T = int(input())
 for tc in range(1, T+1):
@@ -30,6 +31,5 @@ for tc in range(1, T+1):
             if arr[i][j] == '2':
                 R = i
                 C = j
-    visited = [[False] * N for _ in range(N)]
     result = BFS(R, C)
     print(f'#{tc} {result}')
