@@ -8,7 +8,6 @@ def BFS(r, c):
     visited[r][c] = True
     cnt = 0
     while ST:
-        # print(ST, cnt)
         for _ in range(len(ST)):
             vr, vc = ST.pop(0)
             if arr[vr][vc] == '3':
