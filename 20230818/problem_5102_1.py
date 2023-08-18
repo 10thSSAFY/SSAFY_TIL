@@ -1,4 +1,4 @@
-# 노드의 거리
+# 노드의 거리 (스택으로 풀이, 현재 스택의 길이 만큼 pop(1)하면서 너비 우선 탐색)
 import sys
 sys.stdin = open('res/input_5102.txt', 'r')
 

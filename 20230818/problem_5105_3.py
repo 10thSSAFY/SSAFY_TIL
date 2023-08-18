@@ -1,4 +1,4 @@
-# 미로의 거리
+# 미로의 거리 (탐색한 경로의 깊이를 visited의 누적으로부터 추출)
 import sys
 sys.stdin = open('res/input_5105.txt', 'r')
 

@@ -1,4 +1,4 @@
-# 노드의 거리
+# 노드의 거리 (탐색한 경로의 깊이를 숫자로 함께 입력)
 import sys
 sys.stdin = open('res/input_5102.txt', 'r')
 

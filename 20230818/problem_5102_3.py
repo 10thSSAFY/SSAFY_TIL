@@ -1,11 +1,11 @@
-# 노드의 거리
+# 노드의 거리 (탐색한 경로의 깊이를 visited의 누적으로부터 추출)
 import sys
 sys.stdin = open('res/input_5102.txt', 'r')
 
 def BFS(start, goal):
     visted = [0] * (V+1)
     visted[start] = 0
-    queue = [(start)]
+    queue = [start]
     while queue:
         v= queue.pop(0)
         if v == goal:

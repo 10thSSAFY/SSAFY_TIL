@@ -1,4 +1,4 @@
-# 미로의 거리
+# 미로의 거리 (출발지를 찾는 방법을 함수로 표현 findStart())
 import sys
 sys.stdin = open('res/input_5105.txt', 'r')
 
@@ -13,9 +13,8 @@ def BFS(r, c):
         for dr, dc in [(-1, 0), (0, 1), (1, 0), (0, -1)]:
             newR, newC = vr + dr, vc + dc
             if 0 <= newR < N and 0 <= newC < N and arr[newR][newC] != 1 and visited[newR][newC] == 0:
-                if visited[newR][newC] == 0:
-                    queue.append((newR, newC))
-                    visited[newR][newC] = visited[vr][vc] + 1
+                queue.append((newR, newC))
+                visited[newR][newC] = visited[vr][vc] + 1
     return 0
 
 def findStart(StartNum):

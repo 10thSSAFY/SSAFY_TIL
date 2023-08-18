@@ -1,4 +1,4 @@
-# 미로의 거리
+# 미로의 거리 (스택으로 풀이, 현재 스택의 길이 만큼 pop(1)하면서 너비 우선 탐색)
 import sys
 sys.stdin = open('res/input_5105.txt', 'r')
 
