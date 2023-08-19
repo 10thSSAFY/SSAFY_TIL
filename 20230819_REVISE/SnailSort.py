@@ -20,7 +20,7 @@ arr = [[0]*N for _ in range(N)]
 dr = [0, 1, 0, -1]
 dc = [1, 0, -1, 0]
 d = 0
-r, c = -1, 0
+r, c = 0, -1
 for num in lst:
     newR, newC = r+dr[d], c+dc[d]
     if newR < 0 or newR >= N or newC < 0 or newC >= N or arr[newR][newC] != 0:
