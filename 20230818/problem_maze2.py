@@ -1,3 +1,4 @@
+# 미로2
 import sys
 sys.stdin = open('res/input_maze2.txt', 'r')
 

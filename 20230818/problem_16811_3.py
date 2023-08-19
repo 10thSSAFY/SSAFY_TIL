@@ -6,15 +6,18 @@ T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     lst = sorted(map(int, input().split()))
-    cnt_lst = [0] * max(lst)
+
+    max_lst = lst[-1]
+    cnt_lst = [0] * max_lst
     for l in lst:
         cnt_lst[l-1] += 1
 
     min_result = -1
-    for i in range(1, N+1):
-        for j in range(i, N+1):
+    for i in range(1, max_lst):
+        for j in range(i, max_lst):
             S, M, L = sum(cnt_lst[:i]), sum(cnt_lst[i:j]), sum(cnt_lst[j:])
             if 0 not in [S, M, L] and N//2 >= max(S, M, L):
+                # print(cnt_lst[:i], cnt_lst[i:j], cnt_lst[j:])
                 result = max(S, M, L) - min(S, M, L)
                 if min_result == -1:
                     min_result = result
