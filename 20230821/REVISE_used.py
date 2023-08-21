@@ -9,10 +9,7 @@ def permutation(k):
             result_i[k] = i
             permutation(k+1)
             used[i] = False  # i사용 해제
-    
 
-
-    
 N = 3
 arr = [2, 5, 7]
 result_i = [-1] * N

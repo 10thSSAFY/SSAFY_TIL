@@ -7,34 +7,21 @@ def inorder(root):
     if root > N:
         return
     inorder(root * 2)
-    newarr[root] = value
+    A_i[root-1] = value-1
     value += 1
     inorder(root * 2 + 1)
 
 
 for tc in range(1, 11):
     N = int(input())
-    newlst = []
+    A = []
     for _ in range(N):
         arr = list(input().split())
-        newlst.append(arr[1])
-    newarr = [0] * (N+1)
+        A.append(arr[1])
+    A_i = [0] * N
     value = 1
     inorder(1)
-    for i in range(1, N):
-        print(newlst[i], end= ' ')
-    print(f'#{tc}')
-
-'''
-## 강사님의 조언
-N = int(input())
-TREE = [[] for _ in range(N+1)]
-
-for _ in range(N):
-    s = input().split()
-    # print(s)
-    no = int(s[0])
-    TREE[no] = s[1::]
-
-print(TREE)
-'''
+    result = [0]*N
+    for i in range(N):
+        result[A_i[i]] = A[i]
+    print(f'#{tc}', ''.join(result))

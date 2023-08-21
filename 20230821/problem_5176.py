@@ -20,4 +20,3 @@ for tc in range(1, T+1):
     tree_root = arr[1]
     half_node = arr[N//2]
     print(f'#{tc} {tree_root} {half_node}')
-
