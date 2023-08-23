@@ -1,6 +1,7 @@
 # 색종이
 import sys
 sys.stdin = open('res/input_beakjoon_10163.txt', 'r')
+input = sys.stdin.readline
 
 arr = [[0]*1001 for _ in range(1001)]
 N = int(input())
