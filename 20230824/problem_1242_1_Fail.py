@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('res/input.txt', 'r')
+sys.stdin = open('res/input_1242.txt', 'r')
 
 binary = {'0':'0000', '1':'0001', '2':'0010', '3':'0011',
           '4':'0100', '5':'0101', '6':'0110', '7':'0111',
