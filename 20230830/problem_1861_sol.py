@@ -1,4 +1,4 @@
-# 정사각형 방 (실행시간 개선)
+# 정사각형 방
 import sys
 sys.stdin = open('res/input_1861.txt', 'r')
 

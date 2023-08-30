@@ -1,4 +1,4 @@
-# 베이비진 게임
+# 베이비진 게임 (야매풀이)
 import sys
 sys.stdin = open('res/input_5203.txt', 'r')
 
