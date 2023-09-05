@@ -1,0 +1,36 @@
+.container {
+    width: 800px;
+    height: 800px;
+    border: 2px solid black;
+}
+.row {
+    display: flex;
+}
+.white {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}
+.black {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
+.queen {
+    width: 100%;
+    height: 100%;
+    background-image: url(white_queen.png);
+    background-size: cover;
+}
+.rook {
+    width: 100%;
+    height: 100%;
+    background-image: url(white_rook.png);
+    background-size: cover;
+}
+.king {
+    width: 100%;
+    height: 100%;
+    background-image: url(white_king.png);
+    background-size: cover;
+}
