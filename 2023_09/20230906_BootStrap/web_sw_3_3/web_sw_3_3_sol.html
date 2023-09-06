@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+  crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="container">
+    <div>
+      <div class="alert alert-danger" role="alert">
+        Invalid Login or password
+      </div>
+    </div>
+    <div class="display-6 fw-bold">
+      SSAFY 전용 Gitlab 시스템
+    </div>
+    <hr>
+    <div class="border border-light-subtle rounded">
+      <div class="text-center fw-bold mt-2">
+        <div class="text-center fw-bold mt-2">Sign in</div>
+      </div>
+      <div class="border border-primary my-3"></div>
+      <form class="p-3">
+      
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label fw-bold">Username or Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label fw-bold">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <!-- flex의 컨테이너(부모 요소) -->
+        <div class="d-flex justify-content-between">
+
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+          </div>
+
+          <div>
+          <a href="#">Forgot your password?</a>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+  crossorigin="anonymous"></script>
+</body>
+</html>
