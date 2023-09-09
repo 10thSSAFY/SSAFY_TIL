@@ -2,27 +2,64 @@
   height: 500px;
   border: 1px solid black;
   display: flex;
+
+  /* 메인 축의 default 방향입니다. */
   flex-direction: row;
+
+  /* 메인 축의 방향을 수직으로 바꿉니다. */
   /* flex-direction: column; */
+
+  /* 메인 축의 default 방향으로 순서는 역순으로 만듭니다. */
   /* flex-direction: row-reverse; */
+
+  /* 메인 축의 방향을 수직으로 순서는 역순으로 만듭니다. */
   /* flex-direction: column-reverse; */
 
+
+
+  /* flex-wrap 미사용 default */
   /* flex-wrap: nowrap; */
+
+  /* flex-wrap 사용 */
   flex-wrap: wrap;
 
+
+
   /* 메인축 정렬 */
+
+  /* 메인축 기준 start 부터 정렬 default */
   justify-content: flex-start;
+
+  /* 메인축 기준 가운데 정렬 */
   /* justify-content: center; */
+
+  /* 메인축 기준 오른쪽부터 정렬 */
   /* justify-content: flex-end; */
 
+
+
   /* 교차축 정렬 */
+
+  /* 교차축 기준 위로 정렬 */
   /* align-content: flex-start; */
+
+  /* 교차축 기준 가운데 정렬 */
   /* align-content: center; */
+
+  /* 교차축 기준 아래로 정렬 */
   /* align-content: flex-end; */
 
-  /* 행 하나 정렬 */
+
+
+  /* 여러 행이 아닌 교차축 정렬 */
+
+  /* 교차축 기준 위로 정렬 */
   /* align-items: flex-start; */
-  /* align-items: center; */
+
+  /* 교차축 기준 가운데 정렬 */
+  /* align-items: center */
+
+  /* 교차축 기준 아래로 정렬 */
   /* align-items: flex-end; */
 }
 
@@ -34,9 +71,11 @@
 }
 
 .item1 {
+  /* 개별 요소를 다루고 싶을 때 */
   align-self: center;
 }
 
 .item2 {
+  /* 개별 요소를 다루고 싶을 때 */
   align-self: flex-end;
 }
