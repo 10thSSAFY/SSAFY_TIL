@@ -12,7 +12,7 @@ def f(k, cnt):
         return
 
     for i in range(lst[k]):
-        f(k+i + 1, cnt + 1)
+        f(k + i+1, cnt + 1)
 
 
 T = int(input())
