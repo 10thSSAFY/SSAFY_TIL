@@ -13,12 +13,12 @@ def BFS(V):
                 visited[newNum] = True
                 queue.append((newNum, cnt + 1))
                 if newNum == M:
-                    return cnt + 1
+                    return cnt
 
 T = int(input())
 for tc in range(1, T + 1):
     N, M = map(int, input().split())
     visited = [False] * 1000001
     visited[N] = True
-    result = BFS((N, 0))
+    result = BFS((N, 1))
     print(f'#{tc} {result}')
