@@ -5,8 +5,7 @@ FROM
   employees;
 
 SELECT
-  LastName,
-  FirstName
+  LastName, FirstName
 FROM
   employees;
 
@@ -21,18 +20,18 @@ FROM
   employees;
 
 SELECT
-  Name,
-  Milliseconds / 60000 AS '재생 시간(분)'
+  Name, Milliseconds / 60000 AS '재생 시간(분)'
 FROM
   tracks;
 
 -- 02. Sorting data
+  -- ORDER BY 조회 결과의 레코드를 결정
 SELECT
   FirstName
 FROM
   employees
 ORDER BY
-  FirstName ASC;
+  FirstName;
 
 SELECT
   FirstName
@@ -46,8 +45,7 @@ SELECT
 FROM
   customers
 ORDER BY
-  Country DESC,
-  City ASC;
+  Country DESC, City;
 
 SELECT
   Name, Milliseconds / 60000 AS '재생 시간(분)'
@@ -57,21 +55,25 @@ ORDER BY
   Milliseconds DESC;
 
 -- NULL 정렬 예시
-SELECT
-  ReportsTo
-FROM
-  employees
-ORDER BY
-  ReportsTo;
+
 
 -- 03. Filtering data
-SELECT DISTINCT
+  -- DISTINCT 조회 결과에서 중복된 레코드를 제거
+SELECT
   Country
-FROM
+From
   customers
 ORDER BY
   Country;
 
+SELECT DISTINCT
+  Country
+From
+  customers
+ORDER BY
+  Country;
+
+  -- WHERE 조회 시 특정 검색 조건을 지정
 SELECT
   LastName, FirstName, City
 FROM
@@ -104,37 +106,32 @@ WHERE
 
 SELECT
   Name, Bytes
-FROM
+From
   tracks
 WHERE
-  -- 100000 <= Bytes <= 500000;
   Bytes BETWEEN 100000 AND 500000;
 
 SELECT
   Name, Bytes
-FROM
+From
   tracks
 WHERE
   Bytes BETWEEN 100000 AND 500000
-ORDER BY
-  Bytes;
+ORDER BY Bytes;
 
 SELECT
   LastName, FirstName, Country
 FROM
   customers
 WHERE
-  Country IN ('Canada', 'Germany', 'France');
-  -- Country = 'Canada'
-  -- OR Country = 'Germany'
-  -- OR Country = 'France';
+  Country in ('Canada', 'Germany', 'France');
 
 SELECT
   LastName, FirstName, Country
 FROM
   customers
 WHERE
-  Country NOT IN ('Canada', 'Germany', 'France');
+  Country not in ('Canada', 'Germany', 'France');
 
 SELECT
   LastName, FirstName
@@ -150,24 +147,14 @@ FROM
 WHERE
   FirstName LIKE '___a';
 
-SELECT
-  TrackId, Name, Bytes
-FROM
-  tracks
-ORDER BY
-  Bytes DESC
-LIMIT 7;
-
-SELECT
-  TrackId, Name, Bytes
-FROM
-  tracks
-ORDER BY
-  Bytes DESC
-LIMIT 3, 4;
--- LIMIT 4 OFFSET 3;
-
 -- 04. Grouping data
+SELECT
+  Country
+FROM
+  customers
+GROUP BY
+  Country;
+
 SELECT
   Country, COUNT(*)
 FROM
@@ -176,13 +163,24 @@ GROUP BY
   Country;
 
 SELECT
-  Composer, AVG(Bytes)
+  Composer,
+  AVG(Bytes)
 FROM
   tracks
 GROUP BY
   Composer
 ORDER BY
   AVG(Bytes) DESC;
+
+SELECT
+  Composer,
+  AVG(Bytes) AS avgOfBytes
+FROM
+  tracks
+GROUP BY
+  Composer
+ORDER BY
+  avgOfBytes DESC;
 
 
 -- 에러
@@ -195,7 +193,6 @@ WHERE
   avgOfMinute < 10
 GROUP BY
   Composer;
-
 
 -- 에러 해결
 SELECT
