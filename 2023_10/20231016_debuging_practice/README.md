@@ -307,7 +307,7 @@ def update(request, article_pk):
 ```py
 if form.is_valid():
   user = form.save()
-  auth_logint(request, user)
+  auth_login(request, user)
   return redirect('articles:index')
 ```
 
