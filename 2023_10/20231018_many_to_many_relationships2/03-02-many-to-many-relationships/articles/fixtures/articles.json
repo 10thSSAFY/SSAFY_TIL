@@ -1,0 +1,43 @@
+[
+{
+    "model": "articles.article",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "title": "풋살 잘하는 방법",
+        "content": "노오오력",
+        "created_at": "2023-10-17T00:20:04.282Z",
+        "updated_at": "2023-10-17T00:20:04.282Z",
+        "like_users": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "articles.article",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "title": "알고리즘 잘하기",
+        "content": "타고나야지",
+        "created_at": "2023-10-17T00:20:24.409Z",
+        "updated_at": "2023-10-17T00:20:24.409Z",
+        "like_users": [
+            2
+        ]
+    }
+},
+{
+    "model": "articles.article",
+    "pk": 3,
+    "fields": {
+        "user": 2,
+        "title": "신입입니다",
+        "content": "감사합니다",
+        "created_at": "2023-10-17T01:23:17.361Z",
+        "updated_at": "2023-10-17T01:23:17.361Z",
+        "like_users": []
+    }
+}
+]
