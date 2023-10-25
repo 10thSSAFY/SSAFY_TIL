@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // const sub = function (num1, num2) {
+    //   return num1 - num2
+    // }
+
+    // const add = (num1, num2) => {
+    //   return num1 + num2
+    // }
+    
+    // const abs = num1 => -num1
+    
+    const numbers = [1, 2, 3, 4, 5]
+    // foreach, map, filter, find, some, every
+    // const sub = function () {
+    // }
+    numbers.forEach((number)=>{
+      console.log(number)
+    })
+
+
+    const r1 = numbers.map((number) => {
+      return number * 2
+    })
+    console.log(r1)
+
+
+    const r2 = numbers.filter((number)=>{
+      if (number % 2 === 0) {
+        return true
+      }
+    })
+    console.log(r2)
+    
+
+    const r3 = numbers.find((number) => {
+      if (number === 2) {
+        return true
+      }
+    })
+    console.log(r3)
+    
+
+    const r4 = numbers.every((number) => {
+      // return number < 10  // true
+      return number < 5  // false
+    })
+    console.log(r4)
+
+
+    const people = [
+      { name: 'A', age: 20},
+      { name: 'B', age: 25},
+      { name: 'C', age: 20},
+    ]
+
+    const r5 = people.filter((p)=>{
+      if (p.age === 20) {
+        return true
+      }
+    })
+    console.log(r5)
+
+    const r6 = people.map((p)=>{
+      const {name, age} = p
+      return {
+        name,
+        age,
+        city: '광주',
+      }
+    })
+    console.log(r6)  // 문제가 조금 있다.
+
+    const r7 = people.map((p) => {
+      const newP = {...p, city: '광주'}
+      return newP
+    })
+    console.log(r7)
+
+  </script>
+</body>
+</html>
