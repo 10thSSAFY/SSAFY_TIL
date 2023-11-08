@@ -1,7 +1,7 @@
 <template>
   <div>
     {{ myMsg }}
-    <button @click="updateName">이름 변경!</button>
+    <button @click="updateName">이름 변경</button>
   </div>
 </template>
 
