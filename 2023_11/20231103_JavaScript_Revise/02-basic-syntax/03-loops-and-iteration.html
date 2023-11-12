@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let i = 0
+
+    while (i < 6) {
+      console.log(i)
+      i += 1
+    }
+
+    for (let i = 0; i < 6; i++) {
+      console.log(i)
+    }
+
+    const fruits = { a: 'apple', b: 'banana' }
+
+    for (const fruit in fruits) {
+      console.log(fruit)  // a, b
+      console.log(fruits[fruit])  // apple, banana
+    }
+
+    const numbers = [10, 20, 30, 40]
+
+    for (const number of numbers) {
+      console.log(number)  // 10, 20, 30, 40
+    }
+  </script>
+</body>
+
+</html>
