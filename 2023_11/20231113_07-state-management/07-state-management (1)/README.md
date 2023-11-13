@@ -479,7 +479,7 @@ const updateTodo = function (todoId) {
 // stores/counter.js
 
 const doneTodosCount = computed(() => {
-  return todos.value.filter((todo) => todo.isDone)
+  return todos.value.filter((todo) => todo.isDone).length
 })
 
 return { todos, addTodo, deleteTodo, updateTodo, doneTodosCount }
